@@ -25,3 +25,6 @@ pipx install git+https://github.com/Gdev45/URL-to-html.git
 ```bash
 url-to-html
 ```
+
+
+<img width="553" height="222" alt="Screenshot from 2026-04-01 12-04-26" src="https://github.com/user-attachments/assets/77938621-17fc-4db3-89a3-d61b860e45f5" />
