@@ -1,0 +1,16 @@
+[project]
+name = "url-to-html"
+version = "0.1.0"
+description = "CLI tool to fetch and save webpage HTML"
+authors = [{ name="Gdev45" }]
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = ["requests", "colorama"]
+
+[project.scripts]
+url-to-html = "url_to_html.cli:main"
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
