@@ -37,19 +37,19 @@ def fetch_html(url: str) -> str | None:
     headers = {"User-Agent": USER_AGENT}
 
     if not is_allowed(url):
-        print(Fore.RED + "❌ Blocked by robots.txt")
+        print(Fore.RED + "Blocked by robots.txt")
         return None
 
     try:
-        print(Fore.YELLOW + "🔎 Fetching HTML...")
+        print(Fore.YELLOW + "Fetching HTML...")
         response = requests.get(url, headers=headers, timeout=10)
         response.raise_for_status()
         time.sleep(1)
-        print(Fore.GREEN + "✅ HTML successfully retrieved!\n")
+        print(Fore.GREEN + "HTML successfully retrieved!\n")
         return response.text
 
     except requests.exceptions.RequestException as e:
-        print(Fore.RED + f"❌ Error: {e}")
+        print(Fore.RED + f"Error: {e}")
         return None
 
 
@@ -64,9 +64,9 @@ def main():
     html = fetch_html(url)
 
     if html:
-        save = input(Fore.CYAN + "💾 Save HTML to file? (y/n): ").lower()
+        save = input(Fore.CYAN + "Save HTML to file? (y/n): ").lower()
         if save == "y":
-            filename = input(Fore.WHITE + "📄 Filename (default: output.html): ").strip()
+            filename = input(Fore.WHITE + "Filename (default: output.html): ").strip()
             if not filename:
                 filename = "output.html"
 
@@ -76,4 +76,4 @@ def main():
         else:
             print(Fore.YELLOW + "Skipped saving.")
     else:
-        print(Fore.RED + "⚠️ Could not retrieve page.")
+        print(Fore.RED + "Could not retrieve page.")
