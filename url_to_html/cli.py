@@ -12,7 +12,13 @@ USER_AGENT = "MyCLI/1.0 (learning project)"
 
 
 def banner():
-    print(Fore.CYAN + Style.BRIGHT + "\n=== HTML FETCH CLI ===")
+    print(Fore.CYAN + Style.BRIGHT + r"""
+  __  _____  __     __________    __ __________  _____ 
+ / / / / _ \/ /    /_  __/ __ \  / // /_  __/  |/  / / 
+/ /_/ / , _/ /__    / / / /_/ / / _  / / / / /|_/ / /__
+\____/_/|_/____/   /_/  \____/ /_//_/ /_/ /_/  /_/____/
+                                                       
+""")
     print(Fore.CYAN + "Fetch and save webpage HTML safely\n")
 
 
@@ -57,7 +63,7 @@ def main():
     """Entry point for CLI"""
     banner()
 
-    url = input(Fore.WHITE + "🌐 Enter a URL: ").strip()
+    url = input(Fore.WHITE + "Enter a URL: ").strip()
     if not url.startswith("http"):
         url = "https://" + url
 
@@ -72,7 +78,7 @@ def main():
 
             with open(filename, "w", encoding="utf-8") as f:
                 f.write(html)
-            print(Fore.GREEN + f"✔ Saved to {filename}")
+            print(Fore.GREEN + f"Saved to {filename}")
         else:
             print(Fore.YELLOW + "Skipped saving.")
     else:
